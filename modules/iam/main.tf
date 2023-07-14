@@ -24,7 +24,8 @@ resource "aws_iam_role" "ssm_role_automation" {
 
 
 resource "aws_iam_role_policy_attachment" "ssm_automation_attachment" {
+  for_each = toset(var.policy_arns)
   role       = aws_iam_role.ssm_role_automation.name
   # if you are using custom policies rather than AWS policies you will need to update this policy arn with your policy arn
-  policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonSSMAutomationRole"
+  policy_arn = each.value
 }
