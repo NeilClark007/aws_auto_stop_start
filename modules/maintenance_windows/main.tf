@@ -105,7 +105,7 @@ resource "aws_ssm_maintenance_window_task" "auto_start_0730" {
 
       parameter {
         name   = "InstanceId"
-        values = ["{{INSTANCE_ID}}"]
+        values = ["{{RESOURCE_ID}}"]
       }
     }
   }
@@ -133,7 +133,7 @@ resource "aws_ssm_maintenance_window_task" "auto_stop_1830" {
 
       parameter {
         name   = "InstanceId"
-        values = ["{{INSTANCE_ID}}"]
+        values = ["{{RESOURCE_ID}}"]
       }
     }
   }
@@ -161,7 +161,7 @@ resource "aws_ssm_maintenance_window_task" "auto_stop_2100" {
 
       parameter {
         name   = "InstanceId"
-        values = ["{{INSTANCE_ID}}"]
+        values = ["{{RESOURCE_ID}}"]
       }
     }
   }
